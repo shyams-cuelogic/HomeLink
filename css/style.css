@@ -1409,6 +1409,30 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     margin-bottom: 0;
 }
 
+/* --------------- Create Folder Popup --------------- */
+
+#main-wrapper #createFolderPopup {
+    font-size: 16px;
+}
+#main-wrapper #createFolderPopup .delete-link {
+    color: #064ba8;
+    font-weight: bold;
+    margin-top: 30px;
+    display: inline-block;
+}
+#main-wrapper #createFolderPopup h4.modal-title,
+#main-wrapper #createFolderPopup label {
+    color: #424242;
+}
+#main-wrapper #createFolderPopup button.close {
+    color: #333;
+    font-size: 14px;
+    opacity: 1;
+}
+#main-wrapper #createFolderPopup button.close span {
+    font-size: 22px;
+    vertical-align: middle;
+}
 
 #main-wrapper .content-list .content-list-header .action-box {
     float: left;
