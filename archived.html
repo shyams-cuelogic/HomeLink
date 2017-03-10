@@ -34,7 +34,7 @@
 					<ul class="nav nav-pills pull-left">
 						<li class="dropdown help" role="presentation">
                             <span></span>
-                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="#"> 
+                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="javascript:;"> 
 								Help
 								<span class="caret"></span>
 							</a>
@@ -63,7 +63,7 @@
                         </li>
                         <li class="dropdown lang" role="presentation">
                             <span></span>
-                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="#"> 
+                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="javascript:;"> 
 								English
 								<span class="caret"></span>
 							</a>
@@ -87,7 +87,7 @@
 						<!-- before login -->
 						<li class="dropdown login logout" role="presentation"> 
 							<span></span>
-							<a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="#"> 
+							<a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="javascript:;"> 
 								LOG IN or Create a Free Guest Account								
 							</a>							
 						</li>
@@ -131,13 +131,13 @@
                 <div class="container">
                     <nav class="navbar navbar-default">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">DASHBOARD</a></li>
-                            <li class="active"><a href="#">MESSAGES</a></li>
-                            <li><a href="#">OUR DATES AND DESTINATIONS</a></li>
-                            <li><a href="#">OUR LISTINGS(S)</a></li>
-                            <li><a href="#">OUR EXCHANGES</a></li>
-                            <li><a href="#">FAMILY PROFILE</a></li>
-                            <li><a href="#">OUT WISH LIST</a></li>
+                            <li><a href="javascript:;">DASHBOARD</a></li>
+                            <li class="active"><a href="javascript:;">MESSAGES</a></li>
+                            <li><a href="javascript:;">OUR DATES AND DESTINATIONS</a></li>
+                            <li><a href="javascript:;">OUR LISTINGS(S)</a></li>
+                            <li><a href="javascript:;">OUR EXCHANGES</a></li>
+                            <li><a href="javascript:;">FAMILY PROFILE</a></li>
+                            <li><a href="javascript:;">OUT WISH LIST</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -170,14 +170,38 @@
                         </div>
                     </div>
 
+                    <!--        Create Folder Settings Popup         -->
+
+                    <div class="modal fade" id="settingsPopup" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">Close <span>&times;</span></button>
+                                  <h4 class="modal-title">Thanks Giving 2016</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="email">Edit folder name</label>
+                                        <input type="email" class="form-control" placeholder="Thanks Giving 2016" id="email" />
+                                    </div>
+                                    <a href="javascript:;" class="delete-link">Delete this folder</a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-save">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
             		<div class="row">
             			<div class="col-sm-3 sidebar-list">
             				<ul class="nav nav-pills nav-stacked main-menu-list">
-            					<li><a href="#"><i class="fa fa-inbox"></i>Inbox</a></li>
-            					<li><a href="#"><i class="fa fa-paper-plane"></i>Sent</a></li>
-            					<li><a href="#"><i class="fa fa-file-o"></i>Draft</a></li>
-            					<li><a href="#"><i class="fa fa-trash"></i>Trash</a></li>
-            					<li><a href="#"><i class="fa fa-archive"></i>Archived</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-inbox"></i>Inbox</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-paper-plane"></i>Sent</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-file-o"></i>Draft</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-trash"></i>Trash</a></li>
+            					<li><a href="javascript:;" class="active"><i class="fa fa-archive"></i>Archived</a></li>
             				</ul>
             				<ul class="nav nav-pills nav-stacked create-folder-list">
             					<li>
@@ -185,10 +209,30 @@
             							<i class="fa fa-plus-square"></i>Create Folder
             						</a>
             					</li>
-            					<li><a href="#" class="ellipsis"><i class="fa fa-folder"></i>Thanks Giving</a></li>
-            					<li><a href="#" class="ellipsis"><i class="fa fa-folder"></i>X-mas 2016</a></li>
-            					<li><a href="#" class="ellipsis"><i class="fa fa-folder"></i>Easter 2016</a></li>
-            					<li><a href="#" class="ellipsis"><i class="fa fa-folder"></i>Pending</a></li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Thanks Giving
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                </li>
+            					<li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>X-mas 2016
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                </li>
+            					<li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Easter 2016
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                </li>
+            					<li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                </li>
             				</ul>
             			</div>
             			<div class="col-sm-9 content-list">
@@ -200,9 +244,10 @@
                                                 <i class="fa fa-minus-square"></i>
                                               <span class="caret"></span></button>
                                               <ul class="dropdown-menu">
-                                                <li><a href="#">HTML</a></li>
-                                                <li><a href="#">CSS</a></li>
-                                                <li><a href="#">JavaScript</a></li>
+                                                <li><a href="javascript:;">none</a></li>
+                                                <li><a href="javascript:;">check all</a></li>
+                                                <li><a href="javascript:;">check all read</a></li>
+                                                <li><a href="javascript:;">check all unread</a></li>
                                               </ul>
                                         </div>
                                         <div class="action-box">
@@ -215,14 +260,15 @@
                                                 <i class="fa fa-folder"></i>
                                               <span class="caret"></span></button>
                                               <ul class="dropdown-menu">
-                                                <li><a href="#">HTML</a></li>
-                                                <li><a href="#">CSS</a></li>
-                                                <li><a href="#">JavaScript</a></li>
+                                                <li><a href="javascript:;">Thanks Giving</a></li>
+                                                <li><a href="javascript:;">X-mas 2016</a></li>
+                                                <li><a href="javascript:;">Easter 2016</a></li>
+                                                <li><a href="javascript:;">Pending</a></li>
                                               </ul>
                                         </div>
 		    						</div>
 	    							<div class="search-box col-sm-7">
-	    								<a href="#">
+	    								<a href="javascript:;">
 	    									<div class="form-group">
 	    										<i class="fa fa-search"></i>
 	    										<input type="text" class="form-control" placeholder="Name, Listing title and all the messages text" />
@@ -235,16 +281,16 @@
                                                 1 - 100
                                               <span class="caret"></span></button>
                                               <ul class="dropdown-menu">
-                                                <li><a href="#">HTML</a></li>
-                                                <li><a href="#">CSS</a></li>
-                                                <li><a href="#">JavaScript</a></li>
+                                                <li><a href="javascript:;">101 - 200</a></li>
+                                                <li><a href="javascript:;">201 - 300</a></li>
+                                                <li><a href="javascript:;">301 - 400</a></li>
                                               </ul>
                                         </div>
 	    							</div>
 	    						</div>
 	    					</nav>
 
-    						<div class="content-list-row active">
+    						<div class="content-list-row">
     							<div class="row">
     								<div class="col-sm-2 img-checkbox">
 										<input type="checkbox" id="checkbox1" />
@@ -253,11 +299,11 @@
     								</div>
     								<div class="col-sm-8">
     									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
+                                            <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
     										<span>(6)</span>
     									</h2>
     									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
+    									<p class="mail-content ellipsis">
     										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
     									</p>
     								</div>
@@ -265,7 +311,7 @@
     									<p class="time">12:00 PM</p>
     									<div class="attached-files">
     										<i class="fa fa-paperclip"></i>
-    										<i class="fa fa-check active"></i>
+    										<i class="fa fa-check"></i>
     									</div>
     								</div>
     							</div>
@@ -280,11 +326,11 @@
     								</div>
     								<div class="col-sm-8">
     									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
+                                            <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
     										<span>(6)</span>
     									</h2>
     									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
+                                        <p class="mail-content ellipsis">
     										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
     									</p>
     								</div>
@@ -292,7 +338,7 @@
     									<p class="time">12:00 PM</p>
     									<div class="attached-files">
     										<i class="fa fa-paperclip"></i>
-    										<i class="fa fa-check active"></i>
+    										<i class="fa fa-check"></i>
     									</div>
     								</div>
     							</div>
@@ -307,11 +353,11 @@
     								</div>
     								<div class="col-sm-8">
     									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
+                                            <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
     										<span>(6)</span>
     									</h2>
     									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
+                                        <p class="mail-content ellipsis">
     										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
     									</p>
     								</div>
@@ -334,11 +380,11 @@
     								</div>
     								<div class="col-sm-8">
     									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
+    										<a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
     										<span>(6)</span>
     									</h2>
     									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
+                                        <p class="mail-content ellipsis">
     										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
     									</p>
     								</div>
@@ -365,7 +411,7 @@
 						<p class="link">
 							<a href="https://homelink.org/en/selectCountryPopin">Access Local Websites</a>
 						</p>
-						<a href="#" class="btn bg-blue button">Select HomeLink Local Website</a>
+						<a href="javascript:;" class="btn bg-blue button">Select HomeLink Local Website</a>
 					</div>
 					<div class="col-sm-4">
 						<h2>Are you a journalist?
@@ -373,14 +419,14 @@
 						<p class="link">
 							<a href="https://homelink.org/en/selectCountryPopin">info / interviews</a>
 						</p>
-						<a href="#" class="btn bg-blue button">Ask your local press contact</a>
+						<a href="javascript:;" class="btn bg-blue button">Ask your local press contact</a>
 					</div>
 					<div class="col-sm-4">
 						<h2>Any questions?</h2> 
 						<p class="link">
 							<a href="https://homelink.org/en/selectCountryPopin">please check the faqs</a>
 						</p>
-						<a href="#" class="btn bg-blue button">Go to FAQs</a>
+						<a href="javascript:;" class="btn bg-blue button">Go to FAQs</a>
 					</div>
 				</div>
 			</div>
@@ -412,7 +458,15 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            
+
+            $("#main-wrapper .content-list .content-list-row .img-checkbox input[type='checkbox']").change(function() {
+                if(this.checked) {
+                    $(this).closest(".content-list-row").addClass("active");
+                }
+                else {
+                    $(this).closest(".content-list-row").removeClass("active");               
+                }
+            });
         })
     </script>
 </body>

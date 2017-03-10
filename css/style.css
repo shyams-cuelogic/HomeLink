@@ -1412,14 +1412,21 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     color: #757575;
     margin-right: 10px;
 }
-#main-wrapper .nav-pills.nav.main-menu-list>li>a:focus,
-#main-wrapper .nav-pills.nav.main-menu-list>li>a:hover {
+#main-wrapper .nav-pills.nav.main-menu-list>li>a:hover,
+#main-wrapper .nav-pills.nav.main-menu-list>li>a:focus {
+    background: #f4edf5;
+    color: #8e4e9c;
+}
+#main-wrapper .nav-pills.nav.main-menu-list>li>a:hover i,
+#main-wrapper .nav-pills.nav.main-menu-list>li>a:focus i {
+    color: #8e4e9c;
+}
+#main-wrapper .nav-pills.nav.main-menu-list>li>a.active {
     background: #8e4e9c;
     color: #fff;
 }
 #main-wrapper .nav-pills.nav.main-menu-list>li>a.btn-create-folder i,
-#main-wrapper .nav-pills.nav.main-menu-list>li>a:focus i,
-#main-wrapper .nav-pills.nav.main-menu-list>li>a:hover i {
+#main-wrapper .nav-pills.nav.main-menu-list>li>a.active i {
     color: #fff;
 }
 
@@ -1428,9 +1435,12 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .nav-pills.nav.create-folder-list>li>a.btn-create-folder {
     background: #064ba8;
     color: #fff;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 15px;
     text-transform: uppercase;
+}
+#main-wrapper .nav-pills.nav.create-folder-list>li>a.btn-create-folder:hover:before {
+    content: "";
 }
 #main-wrapper .nav-pills.nav.create-folder-list>li>a.btn-create-folder i {
     color: #fff;
@@ -1442,9 +1452,31 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     width: 78%;
 }
 #main-wrapper .sidebar-list .nav-stacked li a {
+    border-radius: 0;
     font-size: 16px;
     color: #757575;
+    width: 100%;
+    margin: 2px 0 0 0;
+    float: left;
 }
+#main-wrapper .sidebar-list .nav-stacked li a i.fa-cog {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    visibility: hidden;
+}
+#main-wrapper .sidebar-list .nav-stacked li a:hover i.fa-cog {
+    visibility: visible;
+}
+#main-wrapper .sidebar-list .nav-stacked li a:hover,
+#main-wrapper .sidebar-list .nav-stacked li a:focus {
+    background: #e6edf5;
+    color: #064ba8;
+}
+#main-wrapper .sidebar-list .nav-stacked li a:hover i,
+#main-wrapper .sidebar-list .nav-stacked li a:focus i {
+    color: #064ba8;
+}    
 #main-wrapper .content-list .navbar-default {
     background: transparent;
     border: none;
@@ -1472,7 +1504,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper #createFolderPopup input {
     height: 40px;
     border-radius: 0;
-    border: 1px solid #777;
+    border: 1px solid #7f7f7f;
 }
 #main-wrapper #createFolderPopup input:focus {
     box-shadow: none;
@@ -1489,6 +1521,11 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper #createFolderPopup button.close span {
     font-size: 22px;
     vertical-align: middle;
+}
+#main-wrapper .content-list .conversation-with {
+    padding-left: 15px;
+    margin-top: 15px;
+    border-left: 4px solid #ececec;
 }
 #main-wrapper .content-list .content-list-header .action-box {
     float: left;
@@ -1511,40 +1548,20 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .content-list .content-list-header .action-box:last-child {
     margin-right: 0;
 }
+#main-wrapper .content-list .content-list-header .action-box.pagination-tab {
+    width: 100%;
+    display: block;
+}
 #main-wrapper .content-list .content-list-header .action-box.pagination-tab .dropdown-toggle {
     font-size: 16px;
+    width: 100%;
+    display: block;
 }
 #main-wrapper .content-list h4.blue-text {
     color: #00c6e9;
     font-size: 16px;
 }
-/*
-#main-wrapper .content-list .content-list-header .action-box {
-    float: left;
-    background: #ececec;
-    width: 27%;
-    border-radius: 5px;
-    padding: 8px 0;
-    height: 35px;
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-#main-wrapper .content-list .content-list-header .action-box i:first-child {
-    font-size: 18px;
-}
-#main-wrapper .content-list .content-list-header .action-box.pagination-tab {
-    color: #424242;
-    font-size: 14px;
-    font-weight: bold;
-    margin-right: 0;
-    width: 100%;
-    padding: 7px 0;
-}
-#main-wrapper .content-list .content-list-header .action-box i {
-    color: #424242;
-    margin: 0 0 0 2px;
-}*/
+
 #main-wrapper .content-list .content-list-header .search-box {
     padding: 0;
 }
@@ -1559,7 +1576,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     padding-left: 35px;
     border-radius: 5px;
     font-size: 14px;
-    font-family: "avenir_roman";
+    font-family: "AvenirLTStdBook";
 }
 #main-wrapper .content-list .content-list-header .search-box input:focus {
     box-shadow: none;
@@ -1575,6 +1592,19 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     padding-top: 30px;
     font-weight: bold;
 }
+#main-wrapper .content-list .chat-section {
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    position: relative;
+}
+#main-wrapper .content-list .chat-section:before {
+    content: "\f104";
+    position: absolute;
+    font: 30px "FontAwesome";
+    top: 30px;
+    left: -10px;
+    color: #e5e5e5;
+}
 
 
 
@@ -1586,8 +1616,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     border-bottom: 1px solid #ececec;
 }
 #main-wrapper .content-list .content-list-row:hover {
-    background: #fcfcfc;
-    cursor: pointer;
+    background: #f7f7f7;
 }
 #main-wrapper .content-list .content-list-row.active {
     background: #ececec;
@@ -1598,6 +1627,10 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     font-size: 18px;
     font-weight: bold;
     text-transform: lowercase;
+    margin-bottom: 5px;
+}
+#main-wrapper .content-list .content-list-row h2 a {
+    color: #064ba8;
 }
 #main-wrapper .content-list .content-list-row .mailer-name {
     color: #424242;
@@ -1607,6 +1640,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .content-list .content-list-row .mail-content {
     color: #757575;
     font-size: 13px;
+    margin-top: 5px;
 }
 #main-wrapper .content-list .content-list-row .time {
     padding-top: 20px;
@@ -1618,6 +1652,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     text-align: center;
 }
 #main-wrapper .content-list .content-list-row .attached-files i {
+    color: #9e9e9e;
     padding: 0 7px;
 }
 #main-wrapper .content-list .content-list-row .attached-files i.fa-paperclip {
@@ -1653,7 +1688,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     position: absolute;
     font: 12px "FontAwesome";
     color: #fff;
-    top: 39px;
+    top: 40px;
     left: 40px;
 }
 #main-wrapper .content-list .content-list-row .img-checkbox input[type="checkbox"]:checked + label:before {
