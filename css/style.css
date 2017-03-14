@@ -1342,6 +1342,10 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     padding-top: 30px;
     padding-bottom: 30px;
 }
+#main-wrapper .remove-padding-horizontal {
+    padding-left: 0;
+    padding-right: 0;
+}
 #main-wrapper .margin-left-15 {
     margin-left: 15px;
 }
@@ -1468,6 +1472,12 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     margin: 2px 0 0 0;
 /*  float: left;*/
 }
+#main-wrapper .sidebar-list .nav-stacked li:first-child a {
+    margin: 0;
+}
+#main-wrapper .nav-pills.nav.create-folder-list>li a {
+    margin: 8px 0 0 0;
+}
 #main-wrapper .sidebar-list .nav-stacked li a i.fa-cog {
     position: absolute;
     right: 0;
@@ -1504,6 +1514,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 }
 #main-wrapper .sidebar-list .nav-stacked li ul.settings-menu li a {
     display: block;
+    margin: 0;
     padding: 3px 20px;
     clear: both;
     font-size: 14px;
@@ -1575,6 +1586,17 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     float: left;
     margin-right: 10px;
 }
+#main-wrapper .content-list .content-list-header .mark-checked {
+    padding-right: 0;
+}
+#main-wrapper .content-list .content-list-header .mark-checked .action-box:first-child .dropdown-toggle {
+    padding-left: 27.5px;
+}
+#main-wrapper .content-list .content-list-header .mark-checked .action-box:first-child input[type="checkbox"] {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
 #main-wrapper .content-list .content-list-header .action-box .dropdown-toggle {
     background: #ececec;
     font-size: 16px;
@@ -1593,11 +1615,14 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .content-list .content-list-header .action-box:last-child {
     margin-right: 0;
 }
-#main-wrapper .content-list .content-list-header .action-box.pagination-tab {
+#main-wrapper .content-list .content-list-header .pagination-tab {
+    width: 15%;
+}
+#main-wrapper .content-list .content-list-header .pagination-tab .action-box {
     width: 100%;
     display: block;
 }
-#main-wrapper .content-list .content-list-header .action-box.pagination-tab .dropdown-toggle {
+#main-wrapper .content-list .content-list-header .pagination-tab .action-box .dropdown-toggle {
     font-size: 16px;
     width: 100%;
     display: block;
@@ -1609,11 +1634,12 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 
 #main-wrapper .content-list .content-list-header .search-box {
     padding: 0;
+    width: 60%;
 }
 #main-wrapper .content-list .content-list-header .search-box i {
     position: absolute;
     top: 10px;
-    left: 14px;
+    left: 12px;
     color: #9e9e9e;
 }
 #main-wrapper .content-list .content-list-header .search-box input {
@@ -1650,13 +1676,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     left: -10px;
     color: #e5e5e5;
 }
-
-
-
-
-
 #main-wrapper .content-list .content-list-row {
-    padding: 5px 0 10px 0;
     border-left: 4px solid #ececec;
     border-bottom: 1px solid #ececec;
 }
@@ -1669,13 +1689,22 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 }
 #main-wrapper .content-list .content-list-row h2 {
     color: #064ba8;
+    font-family: "AvenirLTStdBook";
     font-size: 18px;
     font-weight: bold;
     text-transform: lowercase;
+    margin-top: 15px;
     margin-bottom: 5px;
 }
 #main-wrapper .content-list .content-list-row h2 a {
     color: #064ba8;
+    width: 90%;
+    display: inline-block;
+}
+#main-wrapper .content-list .content-list-row h2 span {
+    display: inline-block;
+    width: 9%;
+    text-align: right;
 }
 #main-wrapper .content-list .content-list-row .mailer-name {
     color: #424242;
@@ -1685,15 +1714,15 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .content-list .content-list-row .mail-content {
     color: #757575;
     font-size: 13px;
-    margin-top: 5px;
 }
 #main-wrapper .content-list .content-list-row .time {
-    padding-top: 20px;
+    padding-top: 18px;
+    padding-left: 0;
     text-align: center;
 }
 #main-wrapper .content-list .content-list-row .attached-files {
     font-size: 20px;
-    margin-top: 50px;
+    margin-top: 27px;
     text-align: center;
 }
 #main-wrapper .content-list .content-list-row .attached-files i {
@@ -1708,8 +1737,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 }
 #main-wrapper .ellipsis {
     text-overflow: ellipsis;
-    width: 94%;
-    display: inline-block;
+    display: block;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -1722,9 +1750,9 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     content: "";
     position: absolute;
     top: 35px;
-    left: 35px;
-    width: 22px;
-    height: 22px;
+    left: 30px;
+    width: 18px;
+    height: 18px;
     border: 1px solid #9e9e9e;
 }
 #main-wrapper .content-list .content-list-row .img-checkbox input[type="checkbox"]:checked + label:after {
@@ -1732,8 +1760,8 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     position: absolute;
     font: 12px "FontAwesome";
     color: #fff;
-    top: 40px;
-    left: 40px;
+    top: 38px;
+    left: 33px;
 }
 #main-wrapper .content-list .content-list-row .img-checkbox input[type="checkbox"]:checked + label:before {
     background: #064ba8;
@@ -1741,8 +1769,8 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 }
 #main-wrapper .content-list .content-list-row .img-checkbox img {
     position: absolute;
-    top: 25px;
-    left: 50px;
+    top: 20px;
+    left: 43px;
     display: inline-block;
     border-radius: 50%;
     width: 50px;
