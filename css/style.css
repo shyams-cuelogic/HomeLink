@@ -1323,6 +1323,9 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     color: #fff;
     border-radius: 0;
 }
+#main-wrapper .btn:focus {
+    outline: none;
+}
 #main-wrapper .btn-save {
     background: #00c6e9;
 }
@@ -1342,8 +1345,14 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .margin-left-15 {
     margin-left: 15px;
 }
+#main-wrapper .padding-left-10-and-half {
+    padding-left: 10.5px;
+}
 #main-wrapper .remove-padding {
     padding: 0;
+}
+#main-wrapper .remove-padding-right {
+    padding-right: 0;
 }
 #main-wrapper input,
 #main-wrapper textarea,
@@ -1436,7 +1445,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     background: #064ba8;
     color: #fff;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 #main-wrapper .nav-pills.nav.create-folder-list>li>a.btn-create-folder:hover:before {
@@ -1457,7 +1466,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     color: #757575;
     width: 100%;
     margin: 2px 0 0 0;
-    float: left;
+/*  float: left;*/
 }
 #main-wrapper .sidebar-list .nav-stacked li a i.fa-cog {
     position: absolute;
@@ -1465,8 +1474,49 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     top: 30%;
     visibility: hidden;
 }
+#main-wrapper .sidebar-list .nav-stacked li ul.settings-menu.hide {
+    display: none;
+}
+#main-wrapper .sidebar-list .nav-stacked li ul.settings-menu.show {
+    display: block;
+}
+#main-wrapper .sidebar-list .nav-stacked li ul.settings-menu {
+    top: 100%;
+    right: 0;
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+#main-wrapper .sidebar-list .nav-stacked li ul.settings-menu li a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
 #main-wrapper .sidebar-list .nav-stacked li a:hover i.fa-cog {
     visibility: visible;
+}
+#main-wrapper .sidebar-list .nav-stacked.create-folder-list>li+li {
+    margin-top: -6px;
 }
 #main-wrapper .sidebar-list .nav-stacked li a:hover,
 #main-wrapper .sidebar-list .nav-stacked li a:focus {
@@ -1485,40 +1535,40 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 
 /* --------------- Create Folder Popup --------------- */
 
-#main-wrapper #createFolderPopup {
+#main-wrapper .modal {
     font-size: 16px;
 }
-#main-wrapper #createFolderPopup .modal-content {
+#main-wrapper .modal .modal-content {
     border-radius: 0;
 }
-#main-wrapper #createFolderPopup .modal-content .modal-header,
-#main-wrapper #createFolderPopup .modal-content .modal-footer {
+#main-wrapper .modal .modal-content .modal-header,
+#main-wrapper .modal .modal-content .modal-footer {
     border: none;
 }
-#main-wrapper #createFolderPopup .delete-link {
+#main-wrapper .modal .delete-link {
     color: #064ba8;
     font-weight: bold;
     margin-top: 30px;
     display: inline-block;
 }
-#main-wrapper #createFolderPopup input {
-    height: 40px;
+#main-wrapper .modal input {
+    height: 34px;
     border-radius: 0;
-    border: 1px solid #7f7f7f;
+    border: 1px solid #757575;
 }
-#main-wrapper #createFolderPopup input:focus {
+#main-wrapper .modal input:focus {
     box-shadow: none;
 }
-#main-wrapper #createFolderPopup h4.modal-title,
-#main-wrapper #createFolderPopup label {
+#main-wrapper .modal h4.modal-title,
+#main-wrapper .modal label {
     color: #424242;
 }
-#main-wrapper #createFolderPopup button.close {
+#main-wrapper .modal button.close {
     color: #333;
     font-size: 14px;
     opacity: 1;
 }
-#main-wrapper #createFolderPopup button.close span {
+#main-wrapper .modal button.close span {
     font-size: 22px;
     vertical-align: middle;
 }
@@ -1529,12 +1579,12 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 }
 #main-wrapper .content-list .content-list-header .action-box {
     float: left;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 #main-wrapper .content-list .content-list-header .action-box .dropdown-toggle {
     background: #ececec;
     font-size: 16px;
-    padding: 5px 8px;
+    padding: 6px 10.5px 4px 10.5px;
 }
 #main-wrapper .content-list .content-list-header .action-box .dropdown-toggle {
     color: #424242;
@@ -1544,6 +1594,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     margin-left: 4px;
+    margin-top: -2px;
 }
 #main-wrapper .content-list .content-list-header .action-box:last-child {
     margin-right: 0;
@@ -1569,14 +1620,14 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     position: absolute;
     top: 10px;
     left: 14px;
-    color: #424242;
+    color: #9e9e9e;
 }
 #main-wrapper .content-list .content-list-header .search-box input {
-    height: 35px;
+    height: 34px;
     padding-left: 35px;
-    border-radius: 5px;
     font-size: 14px;
     font-family: "AvenirLTStdBook";
+    border: 1px solid #757575;
 }
 #main-wrapper .content-list .content-list-header .search-box input:focus {
     box-shadow: none;
@@ -1681,7 +1732,6 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     width: 22px;
     height: 22px;
     border: 1px solid #9e9e9e;
-    border-radius: 5px;
 }
 #main-wrapper .content-list .content-list-row .img-checkbox input[type="checkbox"]:checked + label:after {
     content: "\f00c";
