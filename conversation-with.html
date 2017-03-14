@@ -158,9 +158,8 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="email">Edit folder name</label>
-                                        <input type="email" class="form-control" placeholder="Thanks Giving 2016" id="email" />
+                                        <input type="email" class="form-control" placeholder="" id="email" />
                                     </div>
-                                    <a href="javascript:;" class="delete-link">Delete this folder</a>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
@@ -182,7 +181,7 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="email">Edit folder name</label>
-                                        <input type="email" class="form-control" placeholder="Thanks Giving 2016" id="email" />
+                                        <input type="email" class="form-control" placeholder="" id="email" />
                                     </div>
                                     <a href="javascript:;" class="delete-link">Delete this folder</a>
                                 </div>
@@ -206,7 +205,7 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="email">Edit folder name</label>
-                                        <input type="email" class="form-control" placeholder="Thanks Giving 2016" id="email" />
+                                        <input type="email" class="form-control" placeholder="" id="email" />
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -449,6 +448,7 @@
             $("#main-wrapper .sidebar-list .nav-stacked li a i.fa-cog").click(function(e) {
 
                 $(this).closest('li').find('ul.settings-menu').toggleClass('show');
+                $(this).closest('li').siblings('li').find('ul.settings-menu').removeClass('show');
                 e.stopPropagation();
 
             });

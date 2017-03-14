@@ -1545,12 +1545,6 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .modal .modal-content .modal-footer {
     border: none;
 }
-#main-wrapper .modal .delete-link {
-    color: #064ba8;
-    font-weight: bold;
-    margin-top: 30px;
-    display: inline-block;
-}
 #main-wrapper .modal input {
     height: 34px;
     border-radius: 0;
