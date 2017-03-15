@@ -1589,6 +1589,16 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .content-list .content-list-header .action-box .img-checkbox label {
     position: absolute;
 }
+#main-wrapper .content-list .content-list-header .action-box .img-checkbox label i.fa-minus {
+    display: none;
+}
+#main-wrapper .content-list .content-list-header .action-box .img-checkbox input[type="checkbox"]:checked + label i.fa-minus {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #fff;
+    display: block;
+}
 #main-wrapper .content-list .content-list-header .action-box .img-checkbox input[type="checkbox"] + label:before {
     top: 9px;
     left: 9px;
@@ -1596,6 +1606,7 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .content-list .content-list-header .action-box .img-checkbox input[type="checkbox"]:checked + label:after {
     top: 12px;
     left: 12px;
+    display: none;
 }
 #main-wrapper .content-list .content-list-header .mark-checked {
     padding-right: 0;
