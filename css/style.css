@@ -1443,20 +1443,49 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     color: #fff;
 }
 
+/* --------------- Custom Scrollbar --------------- */
+
+#main-wrapper .custom-scrollbar {
+    overflow: auto;
+}
+#main-wrapper .custom-scrollbar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+#main-wrapper .custom-scrollbar::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #F5F5F5;
+}
+#main-wrapper .custom-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #00c6e9;
+}
+
 /* --------------- Create Folder List --------------- */
 
-#main-wrapper .nav-pills.nav.create-folder-list>li>a.btn-create-folder {
+#main-wrapper .nav-pills.nav.create-folder-list {
+    max-height: 300px;
+}
+#main-wrapper a.btn-create-folder {
     background: #064ba8;
     color: #fff;
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
 }
-#main-wrapper .nav-pills.nav.create-folder-list>li>a.btn-create-folder:hover:before {
+#main-wrapper a.btn-create-folder:hover:before {
     content: "";
 }
-#main-wrapper .nav-pills.nav.create-folder-list>li>a.btn-create-folder i {
+#main-wrapper a.btn-create-folder i {
     color: #fff;
+    margin-right: 10px;
 }
 #main-wrapper .sidebar-list {
     width: 22%;
@@ -1473,6 +1502,9 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 /*  float: left;*/
 }
 #main-wrapper .sidebar-list .nav-stacked li:first-child a {
+    margin: 0;
+}
+#main-wrapper .nav-pills.nav.create-folder-list>li:first-child a {
     margin: 0;
 }
 #main-wrapper .nav-pills.nav.create-folder-list>li a {
@@ -1606,10 +1638,12 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
 #main-wrapper .content-list .content-list-header .action-box .img-checkbox input[type="checkbox"]:checked + label:after {
     top: 12px;
     left: 12px;
-    display: none;
 }
 #main-wrapper .content-list .content-list-header .mark-checked {
     padding-right: 0;
+}
+#main-wrapper .content-list .content-list-header .action-box .dropdown-menu {
+    max-height: 150px;
 }
 #main-wrapper .content-list .content-list-header .mark-checked .action-box:first-child .dropdown-toggle {
     padding-left: 27.5px;
@@ -1710,8 +1744,9 @@ ul li.most-recent.active a,ul li.most-recent a:hover {
     border-left: 4px solid #ececec;
     border-bottom: 1px solid #ececec;
 }
-#main-wrapper .content-list .content-list-row:hover {
-    background: #f7f7f7;
+#main-wrapper .content-list .content-list-row.unread-mail {
+    background: #e1f2ff;
+    position: relative;
 }
 #main-wrapper .content-list .content-list-row.active {
     background: #ececec;
