@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Listing Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 	    <meta name="viewport" content="width=990px">
 	    <meta name="robots" content="noindex, nofollow" />
@@ -34,7 +36,7 @@
 					<ul class="nav nav-pills pull-left">
 						<li class="dropdown help" role="presentation">
                             <span></span>
-                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="#"> 
+                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="javascript:;"> 
 								Help
 								<span class="caret"></span>
 							</a>
@@ -63,7 +65,7 @@
                         </li>
                         <li class="dropdown lang" role="presentation">
                             <span></span>
-                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="#"> 
+                            <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="javascript:;"> 
 								English
 								<span class="caret"></span>
 							</a>
@@ -87,12 +89,13 @@
 						<!-- before login -->
 						<li class="dropdown login logout" role="presentation"> 
 							<span></span>
-							<a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="#"> 
+							<a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" id="drop4" class="dropdown-toggle" href="javascript:;"> 
 								LOG IN or Create a Free Guest Account								
 							</a>							
 						</li>
 						<!-- before login end-->
 					</ul>
+
 				</div>				
 			</div>
 			<!-- top-bar end -->
@@ -130,13 +133,13 @@
                 <div class="container">
                     <nav class="navbar navbar-default">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">DASHBOARD</a></li>
-                            <li class="active"><a href="#">MESSAGES</a></li>
-                            <li><a href="#">OUR DATES AND DESTINATIONS</a></li>
-                            <li><a href="#">OUR LISTINGS(S)</a></li>
-                            <li><a href="#">OUR EXCHANGES</a></li>
-                            <li><a href="#">FAMILY PROFILE</a></li>
-                            <li><a href="#">OUT WISH LIST</a></li>
+                            <li><a href="javascript:;">DASHBOARD</a></li>
+                            <li class="active"><a href="javascript:;">MESSAGES</a></li>
+                            <li><a href="javascript:;">OUR DATES AND DESTINATIONS</a></li>
+                            <li><a href="javascript:;">OUR LISTINGS(S)</a></li>
+                            <li><a href="javascript:;">OUR EXCHANGES</a></li>
+                            <li><a href="javascript:;">FAMILY PROFILE</a></li>
+                            <li><a href="javascript:;">OUT WISH LIST</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -144,173 +147,502 @@
 
             <div id="main-wrapper">
             	<div class="wrap wrap960">
+
+                    <!--        Create Folder Popup         -->
+
+                    <div class="modal fade" id="createFolderPopup" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">Close <span>&times;</span></button>
+                                  <h4 class="modal-title">Create Folder</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="email">Enter folder name</label>
+                                        <input type="email" class="form-control" placeholder="" id="email" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-save">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--        Settings Edit Popup         -->
+
+                    <div class="modal fade" id="settingsEditPopup" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">Close <span>&times;</span></button>
+                                  <h4 class="modal-title">Edit Folder</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="email">Enter folder name</label>
+                                        <input type="email" class="form-control" placeholder="" id="email" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-save">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--        Settings Delete Popup         -->
+
+                    <div class="modal fade" id="settingsDeletePopup" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">Close <span>&times;</span></button>
+                                  <h4 class="modal-title">Delete Folder</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <label>Do you want to delete this folder</label>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-save">Ok</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
             		<div class="row">
             			<div class="col-sm-3 sidebar-list">
             				<ul class="nav nav-pills nav-stacked main-menu-list">
-            					<li><a href="#"><i class="fa fa-inbox"></i>Inbox</a></li>
-            					<li><a href="#"><i class="fa fa-paper-plane"></i>Sent</a></li>
-            					<li><a href="#"><i class="fa fa-file-o"></i>Draft</a></li>
-            					<li><a href="#"><i class="fa fa-trash"></i>Trash</a></li>
-            					<li><a href="#"><i class="fa fa-archive"></i>Archived</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-inbox"></i>Inbox</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-paper-plane"></i>Sent</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-file-o"></i>Draft</a></li>
+            					<li><a href="javascript:;"><i class="fa fa-trash"></i>Trash</a></li>
+            					<li><a href="javascript:;" class="active"><i class="fa fa-archive"></i>Archived</a></li>
             				</ul>
-            				<ul class="nav nav-pills nav-stacked create-folder-list">
+                            <a href="javascript:;" class="btn-create-folder" data-toggle="modal" data-target="#createFolderPopup">
+                                <i class="fa fa-plus-square"></i>Create Folder
+                            </a>
+            				<ul class="nav nav-pills nav-stacked create-folder-list custom-scrollbar">
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Thanks Giving
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
             					<li>
-            						<a href="#" class="btn-create-folder">
-            							<i class="fa fa-plus-square"></i>Create Folder
-            						</a>
-            					</li>
-            					<li class="ellipsis"><a href="#"><i class="fa fa-folder"></i>Thanks Giving</a></li>
-            					<li><a href="#"><i class="fa fa-folder"></i>X-mas 2016</a></li>
-            					<li><a href="#"><i class="fa fa-folder"></i>Easter 2016</a></li>
-            					<li><a href="#"><i class="fa fa-folder"></i>Pending</a></li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>X-mas 2016
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+            					<li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Easter 2016
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ellipsis">
+                                        <i class="fa fa-folder"></i>Pending
+                                        <i class="fa fa-cog" data-toggle="modal" data-target="#settingsPopup"></i>
+                                    </a>
+                                    <ul class="settings-menu">
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsEditPopup">Edit</a></li>
+                                        <li><a href="javascript:;" data-toggle="modal" data-target="#settingsDeletePopup">Delete</a></li>
+                                    </ul>
+                                </li>
             				</ul>
             			</div>
             			<div class="col-sm-9 content-list">
             				<nav class="content-list-header">
             					<div class="row">
-            						<div class="col-sm-3">
-		    							<div class="action-box">
-		    								<a href="#">
-		    									<i class="fa fa-minus-square"></i>
-		    									<i class="fa fa-caret-down"></i>
-		    								</a>
-		    							</div>
-		    							<div class="action-box">
-		    								<a href="#">
-		    									<i class="fa fa-trash"></i>
-		    									<i class="fa fa-caret-down"></i>
-		    								</a>
-	    								</div>
-		    							<div class="action-box">
-		    								<a href="#">
-		    									<i class="fa fa-folder"></i>
-		    									<i class="fa fa-caret-down"></i>
-		    								</a>
-		    							</div>
+            						<div class="col-sm-3 mark-checked">
+                                        <div class="dropdown action-box">
+                                            <div class="img-checkbox checked">
+                                                <input type="checkbox" id="checkbox1" />
+                                                <label for="checkbox1">
+                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                </label>
+                                            </div>
+
+                                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu custom-scrollbar">
+                                                <li><a href="javascript:;">none</a></li>
+                                                <li><a href="javascript:;">check all</a></li>
+                                                <li><a href="javascript:;">check all read</a></li>
+                                                <li><a href="javascript:;">check all unread</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="action-box">
+                                            <button class="btn dropdown-toggle" type="button">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown action-box">
+                                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                                <i class="fa fa-folder"></i>
+                                              <span class="caret"></span></button>
+                                              <ul class="dropdown-menu custom-scrollbar">
+                                                <li><a href="javascript:;">Thanks Giving</a></li>
+                                                <li><a href="javascript:;">X-mas 2016</a></li>
+                                                <li><a href="javascript:;">Easter 2016</a></li>
+                                                <li><a href="javascript:;">Pending</a></li>
+                                              </ul>
+                                        </div>
 		    						</div>
 	    							<div class="search-box col-sm-7">
-	    								<a href="#">
+	    								<a href="javascript:;">
 	    									<div class="form-group">
 	    										<i class="fa fa-search"></i>
 	    										<input type="text" class="form-control" placeholder="Name, Listing title and all the messages text" />
 	    									</div>
 	    								</a>
 	    							</div>
-	    							<div class="col-sm-2">
-	    								<div class="action-box pagination-tab">
-											1 - 100 <i class="fa fa-caret-down"></i>
-		    							</div>
+	    							<div class="col-sm-2 pagination-tab">
+                                        <div class="dropdown action-box pull-right">
+                                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">1 - 100
+                                            <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu custom-scrollbar">
+                                                <li><a href="javascript:;">101 - 200</a></li>
+                                                <li><a href="javascript:;">201 - 300</a></li>
+                                                <li><a href="javascript:;">301 - 400</a></li>
+                                                <li><a href="javascript:;">401 - 500</a></li>
+                                                <li><a href="javascript:;">501 - 600</a></li>
+                                                <li><a href="javascript:;">601 - 700</a></li>
+                                            </ul>
+                                        </div>
 	    							</div>
 	    						</div>
 	    					</nav>
 
-    						<div class="content-list-row active">
-    							<div class="row">
-    								<div class="col-sm-2 img-checkbox">
-										<input type="checkbox" id="checkbox1" />
-										<label for="checkbox1"></label>
-										<img src="images/user-pic.jpg" alt="archived" />
-    								</div>
-    								<div class="col-sm-8">
-    									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
-    										<span>(6)</span>
-    									</h2>
-    									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
-    										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
-    									</p>
-    								</div>
-    								<div class="col-sm-2">
-    									<p class="time">12:00 PM</p>
-    									<div class="attached-files">
-    										<i class="fa fa-paperclip"></i>
-    										<i class="fa fa-check active"></i>
-    									</div>
-    								</div>
-    							</div>
-    						</div>
+                            <div class="content-list-row-wrapper">
 
-    						<div class="content-list-row">
-    							<div class="row">
-    								<div class="col-sm-2 img-checkbox">
-										<input type="checkbox" id="checkbox2" />
-										<label for="checkbox2"></label>
-										<img src="images/user-pic.jpg" alt="archived" />
-    								</div>
-    								<div class="col-sm-8">
-    									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
-    										<span>(6)</span>
-    									</h2>
-    									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
-    										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
-    									</p>
-    								</div>
-    								<div class="col-sm-2">
-    									<p class="time">12:00 PM</p>
-    									<div class="attached-files">
-    										<i class="fa fa-paperclip"></i>
-    										<i class="fa fa-check active"></i>
-    									</div>
-    								</div>
-    							</div>
-    						</div>
+                                <div class="content-list-row unread-mail">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox2" />
+                                            <label for="checkbox2"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(6)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            12:00 PM
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-    						<div class="content-list-row">
-    							<div class="row">
-    								<div class="col-sm-2 img-checkbox">
-										<input type="checkbox" id="checkbox3" />
-										<label for="checkbox3"></label>
-										<img src="images/user-pic.jpg" alt="archived" />
-    								</div>
-    								<div class="col-sm-8">
-    									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
-    										<span>(6)</span>
-    									</h2>
-    									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
-    										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
-    									</p>
-    								</div>
-    								<div class="col-sm-2">
-    									<p class="time">12:00 PM</p>
-    									<div class="attached-files">
-    										<i class="fa fa-paperclip"></i>
-    										<i class="fa fa-check active"></i>
-    									</div>
-    								</div>
-    							</div>
-    						</div>
+                                <div class="content-list-row">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox3" />
+                                            <label for="checkbox3"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(999)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            12:00 PM
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-    						<div class="content-list-row">
-    							<div class="row">
-    								<div class="col-sm-2 img-checkbox">
-										<input type="checkbox" id="checkbox4" />
-										<label for="checkbox4"></label>
-										<img src="images/user-pic.jpg" alt="archived" />
-    								</div>
-    								<div class="col-sm-8">
-    									<h2>
-    										<span class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</span>
-    										<span>(6)</span>
-    									</h2>
-    									<p class="mailer-name">Jon & Caroline Connoly</p>
-    									<p class="mail-content">
-    										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
-    									</p>
-    								</div>
-    								<div class="col-sm-2">
-    									<p class="time">12:00 PM</p>
-    									<div class="attached-files">
-    										<i class="fa fa-paperclip"></i>
-    										<i class="fa fa-check active"></i>
-    									</div>
-    								</div>
-    							</div>
-    						</div>
+                                <div class="content-list-row">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox4" />
+                                            <label for="checkbox4"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(6)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            Dec 6, 2016
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check active"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-list-row unread-mail">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox5" />
+                                            <label for="checkbox5"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(6)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            Dec 6, 2016
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check active"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-list-row">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox6" />
+                                            <label for="checkbox6"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(6)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            12:00 PM
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-list-row">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox7" />
+                                            <label for="checkbox7"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(999)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            12:00 PM
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-list-row">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox8" />
+                                            <label for="checkbox8"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(6)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            Dec 6, 2016
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check active"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-list-row unread-mail">
+                                    <div class="row">
+                                        <div class="col-sm-2 img-checkbox">
+                                            <input type="checkbox" id="checkbox9" />
+                                            <label for="checkbox9"></label>
+                                            <img src="images/user-pic.jpg" alt="archived" />
+                                        </div>
+                                        <div class="col-sm-8 remove-padding-horizontal">
+                                            <h2>
+                                                <a href="Javascript:;" class="ellipsis">family home near historic city of winchester - united family home near historic city of winchester - united</a>
+                                                <span>(6)</span>
+                                            </h2>
+                                            <p class="mailer-name">Jon & Caroline Connoly</p>
+                                            <p class="mail-content ellipsis">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum mauris nec ex aliquet efficitur. Pellentesque placerat vulputate interdum. In rhoncus lacus at.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2 time">
+                                            Dec 6, 2016
+                                            <div class="attached-files">
+                                                <i class="fa fa-paperclip"></i>
+                                                <i class="fa fa-check active"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
             			</div>
             		</div>
             	</div>
@@ -325,7 +657,7 @@
 						<p class="link">
 							<a href="https://homelink.org/en/selectCountryPopin">Access Local Websites</a>
 						</p>
-						<a href="#" class="btn bg-blue button">Select HomeLink Local Website</a>
+						<a href="javascript:;" class="btn bg-blue button">Select HomeLink Local Website</a>
 					</div>
 					<div class="col-sm-4">
 						<h2>Are you a journalist?
@@ -333,14 +665,14 @@
 						<p class="link">
 							<a href="https://homelink.org/en/selectCountryPopin">info / interviews</a>
 						</p>
-						<a href="#" class="btn bg-blue button">Ask your local press contact</a>
+						<a href="javascript:;" class="btn bg-blue button">Ask your local press contact</a>
 					</div>
 					<div class="col-sm-4">
 						<h2>Any questions?</h2> 
 						<p class="link">
 							<a href="https://homelink.org/en/selectCountryPopin">please check the faqs</a>
 						</p>
-						<a href="#" class="btn bg-blue button">Go to FAQs</a>
+						<a href="javascript:;" class="btn bg-blue button">Go to FAQs</a>
 					</div>
 				</div>
 			</div>
@@ -369,5 +701,34 @@
     <script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
     <script src="js/jquery.mousewheel.js" type="text/javascript"></script>
     <script src="js/custom.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#main-wrapper .content-list .content-list-row .img-checkbox input[type='checkbox']").change(function() {
+                if(this.checked) {
+                    $(this).closest(".content-list-row").addClass("active");
+                }
+                else {
+                    $(this).closest(".content-list-row").removeClass("active");               
+                }
+            });
+
+            $("#main-wrapper .sidebar-list .nav-stacked li a i.fa-cog").click(function(e) {
+
+                $(this).closest('li').find('ul.settings-menu').toggleClass('show');
+                $(this).closest('li').siblings('li').find('ul.settings-menu').removeClass('show');
+                e.stopPropagation();
+
+            });
+
+            $(document).click(function() {
+
+                $('li').find('ul.settings-menu').removeClass('show');
+
+            });
+
+        })
+    </script>
 </body>
 </html>
